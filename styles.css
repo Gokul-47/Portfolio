@@ -96,6 +96,52 @@ body {
   align-items: center;
 }
 
+/* Header logo image sizing */
+.nav-container img {
+  display: block;
+  height: 44px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .nav-container img {
+    height: 36px;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container img {
+    height: 30px;
+    max-width: 120px;
+  }
+}
+
+/* Footer logo sizing (match header) */
+.footer-logo {
+  display: block;
+  height: 44px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    height: 36px;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo {
+    height: 30px;
+    max-width: 120px;
+  }
+}
+
 .nav-logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
@@ -895,13 +941,92 @@ body {
 /* ===== Section 11: Footer ===== */
 .footer {
   padding: 2rem 0;
-  text-align: center;
   border-top: 1px solid var(--border);
+  background: transparent;
+}
+
+/* Footer grid layout */
+.site-footer .footer-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-brand .nav-logo {
+  font-size: 1.5rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-nav a,
+.footer-social a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: var(--gold);
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(201, 162, 39, 0.06);
+  padding-top: 1rem;
+  margin-top: 0.75rem;
+  text-align: center;
 }
 
 .footer p {
   color: var(--text-muted);
   font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .site-footer .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nav {
+    margin: 0.5rem 0;
+  }
+
+  .footer-bottom {
+    text-align: left;
+  }
 }
 
 /* ===== Scroll-triggered animations ===== */
